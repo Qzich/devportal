@@ -1,0 +1,19 @@
+version: '3.2'
+
+services:
+   virgil-developer-frontend:
+     ports:
+       - 8080:80
+   virgil-developer-frontend-smtp:
+     ports:
+       - 1025:1025
+       - 8025:8025
+   virgil-developer-db:
+    volumes:
+       - cassandra-2:/var/lib/cassandra
+   virgil-developer-frontend-db:
+    volumes:
+       - cassandra-1:/var/lib/cassandra
+volumes:
+  cassandra-2:
+  cassandra-1:

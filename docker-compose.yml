@@ -1,0 +1,39 @@
+version: '3.2'
+
+services:
+   virgil-api-gateway:
+    build: .
+    depends_on:
+      - virgil-developer
+    ports:
+      - 80
+    environment:
+      API_HTTP_ADDRESS:  :80
+      API_REDIS: redis://virgil-api-gateway-redis:6379
+      CARDS5_URL: http://localhost/cards
+      DEVELOPER1_URL: http://virgil-developer:80
+
+
+   virgil-developer:
+     build:
+      context: virgil-services-developer
+
+
+   virgil-developer-frontend:
+     build:
+      context: virgil-services-developer-frontend
+     depends_on:
+      - virgil-api-gateway
+     environment:
+       API_HTTP_HOST: http://virgil-api-gateway:80
+
+
+   virgil-api-gateway-redis:
+     image: redis:latest
+     restart: always
+     ports:
+       - 6379
+
+
+
+

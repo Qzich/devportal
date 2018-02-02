@@ -12,8 +12,8 @@ service_top:
 service_up:
 	docker-compose $(COMPOSE_FILES) up -d
 
-service_build_frontend:
-	docker-compose $(COMPOSE_FILES_FRONT) build virgil-developer-frontend
+service_build_backend:
+	docker-compose $(COMPOSE_FILES_FRONT) build virgil-dashboard-backend
 
 service_build_core:
 	docker-compose $(COMPOSE_FILES_FRONT) build virgil-developer
@@ -30,11 +30,11 @@ service_status:
 service_log:
 	docker-compose $(COMPOSE_FILES) logs
 
-service_developer_frontend_db_log:
-	docker-compose $(COMPOSE_FILES) logs --follow virgil-developer-frontend-db
+service_dashboard_backend_db_log:
+	docker-compose $(COMPOSE_FILES) logs --follow virgil-dashboard-backend-db
 
-service_developer_frontend_log:
-	docker-compose $(COMPOSE_FILES) logs --follow virgil-developer-frontend
+service_dashboard_backend_log:
+	docker-compose $(COMPOSE_FILES) logs --follow virgil-dashboard-backend
 
 service_api_gateway_log:
 	docker-compose $(COMPOSE_FILES) logs --follow virgil-api-gateway

@@ -3,7 +3,7 @@
 	url = git@github.com:VirgilSecurity/virgil-services-developer.git
 [submodule "virgil-services-developer-frontend"]
 	path = virgil-services-developer-frontend
-	url = git@github.com:VirgilSecurity/virgil-services-developer-frontend.git
+	url = git@github.com:VirgilSecurity/virgil-dashboard-backend.git
 [submodule "virgil-services-api-gateway"]
 	path = virgil-services-api-gateway
 	url = git@github.com:VirgilSecurity/virgil-services-api-gateway.git

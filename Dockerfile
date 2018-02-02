@@ -16,9 +16,9 @@ COPY virgil-services-api-gateway .
 
 RUN echo ">>> Start binary building..."
 RUN echo ">>> Getting go modules" && go get -v -d ./...
-#RUN echo ">>> Running unit tests" && go test tests/...  --tags=unit
+#RUN echo ">>> Running unit tests" && go testls tests/...  --tags=unit
 #RUN echo ">>> Running functional tests" && go test tests/...  --tags=functional
-RUN echo ">>> Building binary" && CGO_ENABLED=$CGO_ENABLED GOOS=$GOOS go build -v -a --ldflags "$EXTRA_LDFLAGS" --tags "$BUILD_TAGS" -o $IMAGENAME cmd/restd/main.go
+RUN echo ">>> Building binary" && CGO_ENABLED=$CGO_ENABLED GOOS=$GOOS go build -v -a --ldflags "$EXTRA_LDFLAGS" --tags "$BUILD_TAGS" -o $IMAGENAME src/restd/main.go
 
 
 FROM alpine:latest

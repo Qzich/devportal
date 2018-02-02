@@ -19,13 +19,13 @@ services:
       context: virgil-services-developer
 
 
-   virgil-developer-frontend:
+   virgil-dashboard-backend:
      build:
       context: virgil-services-developer-frontend
      depends_on:
       - virgil-api-gateway
      environment:
-       API_HTTP_HOST: http://virgil-api-gateway:80
+       API_GATEWAY_HTTP_HOST: http://virgil-api-gateway:80
 
 
    virgil-api-gateway-redis:

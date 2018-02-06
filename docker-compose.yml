@@ -2,7 +2,8 @@ version: '3.2'
 
 services:
    virgil-api-gateway:
-    build: .
+    image: devportalbuild_virgil-api-gateway:latest
+#    build: .
     depends_on:
       - virgil-developer
     ports:
@@ -21,7 +22,7 @@ services:
 
    virgil-dashboard-backend:
      build:
-      context: virgil-services-developer-frontend
+      context: virgil-dashboard-backend
      depends_on:
       - virgil-api-gateway
      environment:

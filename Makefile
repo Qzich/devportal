@@ -1,8 +1,8 @@
 COMPOSE_FILES ?= -f docker-compose0.yml \
                  -f virgil-services-developer/docker-compose.yml \
                  -f virgil-services-developer/build/docker-compose.yml \
-                 -f virgil-services-developer-frontend/docker-compose.yml \
-				 -f virgil-services-developer-frontend/build/docker-compose.yml \
+                 -f virgil-dashboard-backend/docker-compose.yml \
+				 -f virgil-dashboard-backend/build/docker-compose.yml \
                  -f docker-compose.yml \
                  -f docker-compose.override.yml
 
